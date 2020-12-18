@@ -1,0 +1,32 @@
+.chat {
+    margin: 5px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.chat__time {
+    width: 80px;
+    padding: 0 5px;
+
+    font-size: 12px;
+    color: #888888;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__user {
+    font-size: 12px;
+    color: #888888;
+}
+
+.chat__text {
+    font-size: 14px;
+}

@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+
+  back:
+    image: chat-back
+    container_name: chat-back
+    build: ./back
+    restart: always
+    volumes:
+      - ./back/app:/app
+      - /app/node_modules
+    networks:
+      - backend
+
+  front:
+    image: chat-front
+    container_name: chat-front
+    build: ./front
+    volumes:
+      - ./front/app:/app
+      - /app/node_modules
+
+  nginx:
+    image: nginx:stable
+    container_name: chat-nginx
+    restart: always
+    volumes:
+      - ./front/app:/web
+      - ./nginx/server.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - backend
+    ports:
+      - 80:80
+      - 8080:8080
+
+networks:
+
+  backend:
