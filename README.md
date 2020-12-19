@@ -11,6 +11,10 @@ A simple implementation of a chatting website.
 * Server : NGINX
 * Also, everthing runs on Docker
 
+## System Architecture
+
+![diagram](diagram.png)
+
 ## Usage
 
 ### Configurations
